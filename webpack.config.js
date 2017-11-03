@@ -1,9 +1,10 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: {
-    popup: './popup.tsx',
-    background: './background.ts'
+    popup: './src/popup.tsx',
+    background: './src/background.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,5 +19,12 @@ module.exports = {
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
       { test: /\.tsx?$/, loader: 'ts-loader' }
     ]
-  }
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: './src/popup.html'},
+      { from: './src/manifest.json'},
+      { from: './src/icons', to: './icons'},
+    ])
+  ]
 }

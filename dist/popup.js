@@ -971,13 +971,15 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(6);
 var ReactDOM = __webpack_require__(18);
+// How to find object configs
+//Object.keys(window).filter(x => {return x.indexOf('Config') != -1}).map( el => window[el])
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
-        return (React.createElement("div", null, "Hello Norman!"));
+        return (React.createElement("div", null, "Hello Yisus!"));
     };
     return App;
 }(React.Component));
